@@ -12,6 +12,6 @@ public class NotificationManager {
     }
 
     public void sendNotification() {
-        notificationService.sendMessage("Hello World");
+        notificationService.send("Hello World", "email@gmail.com");
     }
 }

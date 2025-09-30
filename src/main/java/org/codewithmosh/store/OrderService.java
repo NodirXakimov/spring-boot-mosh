@@ -1,16 +1,20 @@
 package org.codewithmosh.store;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import jakarta.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.stereotype.Service;
 
-@Service
+//@Service
 public class OrderService {
     private PaymentService paymentService;
 
-    @Autowired
+    //    @Autowired
     public OrderService(@Qualifier("stripe") PaymentService paymentService) {
         this.paymentService = paymentService;
+    }
+
+    @PostConstruct
+    public void init() {
+        System.out.println("Order Service PostConstruct");
     }
 
     public void placeOrder() {
