@@ -1,7 +1,13 @@
 spring:
   application:
     name:store
-
+  datasource:
+    url: jdbc:postgresql://localhost:5432/store
+    username: postgres
+    password: postgres
+  flyway:
+    enabled: true
+    clean-disabled: false
 stripe:
   apiUrl: https://api.stripe.com
   enabled: true
