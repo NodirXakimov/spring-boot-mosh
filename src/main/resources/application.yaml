@@ -8,6 +8,10 @@ spring:
   flyway:
     enabled: true
     clean-disabled: false
+  jpa:
+    show-sql: true
+#    hibernate:
+#      ddl-auto: create
 stripe:
   apiUrl: https://api.stripe.com
   enabled: true
