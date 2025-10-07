@@ -60,6 +60,7 @@ public class StoreApplication {
 //        service.showRelatedEntities();
 //        service.fetchAddresses();
 //        service.persistRelated();
-        service.deleteRelated();
+//        service.deleteRelated();
+        service.manageProducts();
     }
 }

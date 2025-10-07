@@ -4,11 +4,13 @@ import jakarta.persistence.EntityManager;
 import jakarta.transaction.Transactional;
 import lombok.AllArgsConstructor;
 import org.codewithmosh.store.entities.Address;
+import org.codewithmosh.store.entities.Category;
+import org.codewithmosh.store.entities.Product;
 import org.codewithmosh.store.entities.User;
-import org.codewithmosh.store.repositories.AddressRepository;
-import org.codewithmosh.store.repositories.ProfileRepository;
-import org.codewithmosh.store.repositories.UserRepository;
+import org.codewithmosh.store.repositories.*;
 import org.springframework.stereotype.Service;
+
+import java.math.BigDecimal;
 
 @AllArgsConstructor
 @Service
@@ -17,6 +19,8 @@ public class UserService {
     private final ProfileRepository profileRepository;
     private final AddressRepository addressRepository;
     private final EntityManager entityManager;
+    private final CategoryRepository categoryRepository;
+    private final ProductRepository productRepository;
 
     @Transactional
     public void showEntityStates() {
@@ -71,5 +75,30 @@ public class UserService {
         var address = user.getAddresses().getFirst();
         user.removeAddress(address);
         userRepository.save(user);
+    }
+
+    @Transactional
+    public void manageProducts(){
+//        var category =  Category.builder()
+//                .name("Mobile phone")
+//                .build();
+//        var category = categoryRepository.findById((byte)2).orElseThrow();
+//
+//        var product = Product.builder()
+//                .name("iPhone 16 Pro")
+//                .price(BigDecimal.valueOf(1000.00))
+//                .description("iPhone 16 Pro")
+//                .category(category)
+//                .build();
+
+//        category.addProduct(product);
+//        categoryRepository.save(category);
+//        productRepository.save(product);
+
+        var user = userRepository.findById(2L).orElseThrow();
+
+
+
+
     }
 }
